@@ -1,0 +1,7 @@
+---
+- hosts: test
+  sudo: false
+
+  roles:
+    - role: elliotweiser.osx-command-line-tools
+    - role: geerlingguy.homebrew
