@@ -26,9 +26,16 @@
       - gawk
       - wget
       - zsh
+    
+    nodejs:
+      n_install_path: "{{ ansible_env.HOME }}/.n"
+      versions:
+        - lts
+        - stable
 
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.homebrew
     - role: git
     - role: package
+    - role: nodejs
