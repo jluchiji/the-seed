@@ -2,6 +2,14 @@
 - hosts: test
   sudo: false
 
+  vars:
+    user:
+      name: Denis Luchkin-Zhou
+      email: wyvernzora@gmail.com
+    git:
+      credential_helper: osxkeychain
+
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.homebrew
+    - role: git

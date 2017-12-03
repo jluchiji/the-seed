@@ -1,0 +1,20 @@
+#
+# Updates git to the latest version via OS package manager and sets up
+# configuration files.
+#
+---
+- name: Git | Install/update git
+  package: >
+    name=git
+    state=latest
+  tags: ['software']
+
+- name: Git | Setup gitconfig
+  template: >
+    src=templates/gitconfig.j2
+    dest=~/.gitconfig
+
+- name: Git | Setup gitignore
+  copy: >
+    src=files/gitignore
+    dest=~/.gitignore
