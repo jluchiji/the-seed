@@ -7,7 +7,6 @@
   package: >
     name=git
     state=latest
-  tags: ['software']
 
 - name: Git | Setup gitconfig
   template: >

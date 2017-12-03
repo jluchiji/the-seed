@@ -1,0 +1,18 @@
+#
+# MacOS specific packaging setup.
+# Notably, as part of provisioning we replace all UNIX utilities with their
+# GNU versions, which requires special handling.
+#
+---
+- name: Package | Update homebrew
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+
+- name: Package | Install packages
+  homebrew: >
+    name={{ item.name | default(item) }}
+    state=present
+    options={{ item.options | default(omit) }}
+  with_items:
+    - "{{ packages }}"
