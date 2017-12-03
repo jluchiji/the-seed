@@ -1,37 +1,10 @@
 ---
 - hosts: test
-  sudo: false
+  become: no
 
-  vars:
-    user:
-      name: Denis Luchkin-Zhou
-      email: wyvernzora@gmail.com
-    git:
-      credential_helper: osxkeychain
-
-    homebrew_taps:
-      - caskroom/cask
-      - caskroom/fonts
-      - homebrew/dupes
-
-    packages:
-      - { name: coreutils, options: "with-default-names" }
-      - { name: findutils, options: "with-default-names" }
-      - { name: gnu-indent, options: "with-default-names" }
-      - { name: gnu-sed, options: "with-default-names" }
-      # - { name: gnu-tar, options: "with-default-names" }
-      - { name: gnutls, options: "with-default-names" }
-      - { name: grep, options: "with-default-names" }
-      - direnv
-      - gawk
-      - wget
-      - zsh
-    
-    nodejs:
-      n_install_path: "{{ ansible_env.HOME }}/.n"
-      versions:
-        - lts
-        - stable
+  vars_files:
+    - vars/common.yml
+    - vars/macos.yml
 
   roles:
     - role: elliotweiser.osx-command-line-tools

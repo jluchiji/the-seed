@@ -1,6 +1,6 @@
 ---
 
-- include: ./macos.yml
+- include_tasks: ./macos.yml
   when: ansible_distribution == 'MacOSX'
 
 - name: Package | Install packages

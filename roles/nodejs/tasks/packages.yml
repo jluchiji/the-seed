@@ -1,0 +1,7 @@
+---
+- name: NodeJS | Install global packages
+  shell: "PATH=$PATH:{{ nodejs.n_install_path }}/bin npm install -g {{ item }}"
+  args:
+    creates: "{{ nodejs.npm_prefix }}/lib/node_modules/{{ item }}"
+  with_items:
+    - "{{ nodejs.global_packages }}"

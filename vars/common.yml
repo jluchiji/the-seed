@@ -1,0 +1,15 @@
+---
+user:
+  name: Denis Luchkin-Zhou
+  email: wyvernzora@gmail.com
+
+nodejs:
+  n_install_path: "{{ ansible_env.HOME }}/.n"
+  npm_prefix: ~/.npm
+  versions:
+    - lts
+    - stable
+  global_packages:
+    - nodemon
+    - renamer
+    - typescript
