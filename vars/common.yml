@@ -9,20 +9,9 @@ nodejs:
   versions:
     - lts
     - stable
-  global_packages:
-    - nodemon
-    - renamer
-    - typescript
 
 zsh:
   dotfile_path: $HOME/.zsh
-  antibody_bundles:
-    - chrissicool/zsh-256color
-    - mafredri/zsh-async
-    - rupa/z
-    - sindresorhus/pure
-    - supercrabtree/k
-    - zsh-users/zsh-syntax-highlighting
 
 golang:
   prefix: /usr/local

@@ -1,9 +1,4 @@
 ---
-- name: ZSH | Install/update zsh
-  package: >
-    name=zsh
-    state=latest
-
 - name: ZSH | Create .zsh directory
   file: >
     path={{ zsh.dotfile_path }}

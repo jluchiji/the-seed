@@ -2,49 +2,9 @@
 git:
   credential_helper: osxkeychain
 
-homebrew_taps:
-  - caskroom/cask
-  - caskroom/fonts
-  - homebrew/dupes
-
-homebrew_cask_apps:
-  - 1password
-  - caffeine
-  - daisydisk
-  - dropbox
-  - font-hack
-  - font-input
-  - font-open-sans
-  - font-roboto
-  - font-roboto-slab
-  - google-chrome
-  - gpg-suite
-  - iterm2
-  - keybase
-  - mplayerx
-  - sip
-  - steam
-  - the-unarchiver
-  - tower
-  - visual-studio-code
-  - vlc
-
-homebrew_installed_packages:
-  - { name: coreutils, install_options: "with-default-names" }
-  - { name: findutils, install_options: "with-default-names" }
-  - { name: gnu-indent, install_options: "with-default-names" }
-  - { name: gnu-sed, install_options: "with-default-names" }
-  # - { name: gnu-tar, options: "with-default-names" }
-  - { name: gnutls, install_options: "with-default-names" }
-  - { name: grep, install_options: "with-default-names" }
-  - direnv
-  - gawk
-  - git
-  - git-extras
-  - gpg
-  - wget
-
-packages: [ ]
+homebrew_taps: "{{ packages.homebrew.taps }}"
+homebrew_cask_apps: "{{ packages.homebrew.casks }}"
+homebrew_installed_packages: "{{ packages.homebrew.packages }}"
 
 macos:
   force_defaults: No

@@ -4,4 +4,4 @@
   args:
     creates: "{{ nodejs.npm_prefix }}/lib/node_modules/{{ item }}"
   with_items:
-    - "{{ nodejs.global_packages }}"
+    - "{{ packages.npm }}"

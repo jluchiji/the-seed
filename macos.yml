@@ -3,11 +3,9 @@
   become: no
 
   vars_files:
+    - vars/packages.macos.yml
     - vars/common.yml
     - vars/macos.yml
-
-  environment:
-    PATH: "{{ ansible_env.PATH }}:/usr/local/bin"
 
   roles:
     - role: elliotweiser.osx-command-line-tools
@@ -19,4 +17,3 @@
     - role: nodejs
     - role: golang
     - role: macos
-
