@@ -1,0 +1,12 @@
+---
+- name: Golang | Check if go is already installed
+  stat: path={{ golang.prefix }}/go/bin
+  register: golang_goroot_dir
+
+- include_tasks: install.yml
+  when: golang_goroot_dir.stat.exists == False
+  
+- name: Golang | Copy golang.zshrc
+  template:
+    src: templates/golang.zshrc.j2
+    dest: "{{ zsh.dotfile_path }}/golang.zshrc"

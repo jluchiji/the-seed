@@ -20,3 +20,9 @@ zsh:
     - zsh-users/zsh-syntax-highlighting
     - mafredri/zsh-async
     - sindresorhus/pure
+
+golang:
+  prefix: /usr/local
+  gopath: $HOME/.go
+  os: "{{ ansible_os_family | lower }}"
+  arch: '{{ (ansible_architecture == "x86_64") | ternary("amd64", ansible_architecture) }}'

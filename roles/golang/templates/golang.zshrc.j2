@@ -1,0 +1,9 @@
+#
+# Environment variables
+#
+
+# Path where Go installs packages
+export GOPATH="{{ golang.gopath }}"
+
+# Make sure we can execute those binaries
+export PATH="$PATH:{{ golang.prefix }}/go/bin:$GOPATH/bin"

@@ -12,9 +12,10 @@ packages:
   - { name: findutils, options: "with-default-names" }
   - { name: gnu-indent, options: "with-default-names" }
   - { name: gnu-sed, options: "with-default-names" }
-  # - { name: gnu-tar, options: "with-default-names" }
+  - { name: gnu-tar, options: "with-default-names" }
   - { name: gnutls, options: "with-default-names" }
   - { name: grep, options: "with-default-names" }
   - direnv
   - gawk
   - wget
+

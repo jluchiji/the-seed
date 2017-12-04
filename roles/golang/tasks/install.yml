@@ -1,0 +1,24 @@
+---
+- name: Golang | Check for the latest version
+  uri:
+    url: https://golang.org/VERSION?m=text
+    return_content: yes
+  register: golang_latest_version
+
+- name: Golang | Create temp directory
+  tempfile: state=directory
+  register: golang_tempdir
+
+- name: Golang | Download golang binary archive
+  get_url: >
+    url=https://storage.googleapis.com/golang/{{ golang_latest_version.content }}.{{ golang.os }}-{{ golang.arch }}.tar.gz
+    dest={{ golang_tempdir.path }}/golang.tar.gz
+
+- name: Golang | Create goroot directory
+  file: >
+    path={{ golang.prefix }}
+    state=directory
+    recurse=yes
+
+- name: Golang | Extract binaries into goroot
+  command: tar xzf "{{ golang_tempdir.path }}/golang.tar.gz" -C "{{ golang.prefix }}"
