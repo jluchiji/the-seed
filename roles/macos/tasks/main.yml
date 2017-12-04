@@ -6,3 +6,5 @@
   
 - include_tasks: defaults.yml
   when: macos_defaults_marker.stat.exists == False or macos.force_defaults == True
+
+- include_tasks: apps.yml

@@ -1,0 +1,9 @@
+#
+# Copy app configuration files into the right places
+#
+---
+
+- name: MacOS | Copy iTerm2 configuration
+  copy:
+    src: files/iTerm2/com.googlecode.iterm2.plist
+    dest: ~/Library/Preferences/com.googlecode.iterm2.plist
