@@ -1,11 +1,6 @@
 ---
-- hosts: test
+- hosts: MacOS
   become: no
-
-  vars_files:
-    - vars/packages.macos.yml
-    - vars/common.yml
-    - vars/macos.yml
 
   roles:
     - role: elliotweiser.osx-command-line-tools

@@ -1,3 +1,6 @@
+#
+# Variables common to all groups
+#
 ---
 user:
   name: Denis Luchkin-Zhou

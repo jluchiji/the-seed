@@ -1,0 +1,13 @@
+#
+# Vars specific to macOS hosts
+#
+---
+git:
+  credential_helper: osxkeychain
+
+macos:
+  force_defaults: No
+
+homebrew_taps: "{{ packages.homebrew.taps }}"
+homebrew_cask_apps: "{{ packages.homebrew.casks }}"
+homebrew_installed_packages: "{{ packages.homebrew.packages }}"
