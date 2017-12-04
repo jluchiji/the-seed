@@ -34,6 +34,7 @@ packages:
       - gpg-suite
       - iterm2
       - keybase
+      - kryptco/tap/kr
       - mplayerx
       - sip
       - steam
