@@ -1,12 +1,7 @@
 ---
-
-- include_tasks: ./macos.yml
-  when: ansible_distribution == 'MacOSX'
-
 - name: Package | Install packages
   package: >
     name={{ item }}
     state=present
   with_items:
     - "{{ packages }}"
-  when: ansible_distribution != 'MacOSX'

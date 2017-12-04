@@ -3,11 +3,6 @@
 # configuration files.
 #
 ---
-- name: Git | Install/update git
-  package: >
-    name=git
-    state=latest
-
 - name: Git | Setup gitconfig
   template: >
     src=templates/gitconfig.j2

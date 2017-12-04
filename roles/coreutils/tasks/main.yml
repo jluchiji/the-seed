@@ -1,0 +1,11 @@
+---
+- name: CoreUtils | Copy coreutils.macos.zshrc
+  copy:
+    src: files/coreutils.macos.zshrc
+    dest: "{{ zsh.dotfile_path }}/coreutils.macos.zshrc"
+  when: ansible_distribution == "MacOSX"
+
+- name: CoreUtils | Copy coreutils.zshrc
+  copy:
+    src: files/coreutils.zshrc
+    dest: "{{ zsh.dotfile_path }}/coreutils.zshrc"

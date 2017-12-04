@@ -5,7 +5,7 @@ user:
 
 nodejs:
   n_install_path: "{{ ansible_env.HOME }}/.n"
-  npm_prefix: $HOME/.npm
+  npm_prefix: "{{ ansible_env.HOME }}/.npm"
   versions:
     - lts
     - stable
