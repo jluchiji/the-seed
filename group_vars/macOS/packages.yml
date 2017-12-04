@@ -18,6 +18,7 @@ packages:
       - caskroom/cask
       - caskroom/fonts
       - homebrew/dupes
+      - kryptco/tap
     
     casks:
       - 1password
@@ -34,7 +35,6 @@ packages:
       - gpg-suite
       - iterm2
       - keybase
-      - kryptco/tap/kr
       - mplayerx
       - sip
       - steam
@@ -51,6 +51,7 @@ packages:
       # - { name: gnu-tar, options: "with-default-names" }
       - { name: gnutls, install_options: "with-default-names" }
       - { name: grep, install_options: "with-default-names" }
+      - kr
       - direnv
       - gawk
       - git
