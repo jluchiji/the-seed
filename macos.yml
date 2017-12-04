@@ -7,8 +7,9 @@
     - vars/macos.yml
 
   roles:
-    - role: elliotweiser.osx-command-line-tools
-    - role: geerlingguy.homebrew
-    - role: git
-    - role: package
+#    - role: elliotweiser.osx-command-line-tools
+#    - role: geerlingguy.homebrew
+#    - role: git
+    - role: zsh
+#    - role: package
     - role: nodejs

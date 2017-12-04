@@ -4,6 +4,11 @@
     src=templates/npmrc.j2
     dest=~/.npmrc
 
+- name: NodeJS | Copy nodejs.zshrc
+  template: >
+    src=templates/nodejs.zshrc.j2
+    dest={{ zsh.dotfile_path }}/nodejs.zshrc
+
 - name: NodeJS | Check if n is already installed
   stat: path={{ nodejs.n_install_path }}
   register: nodejs_n_dir

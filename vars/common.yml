@@ -5,7 +5,7 @@ user:
 
 nodejs:
   n_install_path: "{{ ansible_env.HOME }}/.n"
-  npm_prefix: ~/.npm
+  npm_prefix: $HOME/.npm
   versions:
     - lts
     - stable
@@ -13,3 +13,6 @@ nodejs:
     - nodemon
     - renamer
     - typescript
+
+zsh:
+  dotfile_path: $HOME/.zsh

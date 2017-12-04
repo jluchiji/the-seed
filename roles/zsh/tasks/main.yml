@@ -1,0 +1,21 @@
+---
+- name: ZSH | Install/update zsh
+  package: >
+    name=zsh
+    state=latest
+
+- name: ZSH | Create .zsh directory
+  file: >
+    path={{ zsh.dotfile_path }}
+    state=directory
+
+- name: ZSH | Set default shell for remote user to zsh
+  user: >
+    name={{ ansible_user_id }}
+    shell=/bin/zsh
+  become: yes
+
+- name: ZSH | Copy .zshrc
+  template: >
+    src=templates/zshrc.j2
+    dest=~/.zshrc

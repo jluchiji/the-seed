@@ -1,0 +1,27 @@
+#
+# Default PATH
+#
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
+
+
+#
+# Export the dotfile root envar
+#
+export DOT_ROOT="{{ zsh.dotfile_path }}"
+
+
+#
+# Source the .localrc if available
+#
+if [ -f "${HOME}/.localrc" ]; then
+  source "${HOME}/.localrc"
+fi
+
+
+#
+# Load all .zshrc files
+#
+for zshrc in $(find -H "${DOT_ROOT}" -maxdepth 2 -name '*.zshrc'); do
+  echo "Loading $zshrc"
+  source "$zshrc"
+done
