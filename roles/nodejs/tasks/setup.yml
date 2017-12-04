@@ -31,11 +31,8 @@
     creates: "{{ nodejs.n_install_path }}"
   when: nodejs_n_dir.stat.exists == False
 
-- name: NodeJS | Update n
-  shell: "N_PREFIX={{ nodejs.n_install_path }} {{ nodejs.n_install_path }}/bin/n-update -y"
-  when: nodejs_n_dir.stat.exists == True
-
 - name: NodeJS | Install requested NodeJS versions
   command: "{{ nodejs.n_install_path }}/bin/n {{ item }}"
   with_items:
     - "{{ nodejs.versions }}"
+  when: nodejs_n_dir.stat.exists == False
