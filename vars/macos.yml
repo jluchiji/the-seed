@@ -22,3 +22,5 @@ homebrew_installed_packages:
 
 packages: [ ]
 
+macos:
+  force_defaults: No

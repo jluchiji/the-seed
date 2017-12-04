@@ -1,0 +1,8 @@
+---
+- name: MacOS | Check if defaults have already been set
+  stat:
+    path: "{{ zsh.dotfile_path }}/.defaults"
+  register: macos_defaults_marker
+  
+- include_tasks: defaults.yml
+  when: macos_defaults_marker.stat.exists == False or macos.force_defaults == True

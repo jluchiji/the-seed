@@ -1,0 +1,46 @@
+---
+- name: MacOS | Set up AppStore preferences
+  script: scripts/app-store.sh
+  become: yes
+
+- name: MacOS | Set up App preferences
+  script: scripts/apps.sh
+  become: yes
+
+- name: MacOS | Set up Dock preferences
+  script: scripts/dock.sh
+  become: yes
+
+- name: MacOS | Set up Finder preferences
+  script: scripts/finder.sh
+  become: yes
+
+- name: MacOS | Set up general preferences
+  script: scripts/general.sh
+  become: yes
+
+- name: MacOS | Set up peripherals preferences
+  script: scripts/peripherals.sh
+  become: yes
+
+- name: MacOS | Set up Safari preferences
+  script: scripts/safari.sh
+  become: yes
+
+- name: MacOS | Set up screen preferences
+  script: scripts/screen.sh
+  become: yes
+
+- name: MacOS | Set up spotlight preferences
+  script: scripts/spotlight.sh
+  become: yes
+
+- name: MacOS | Optimizing SSD
+  script: scripts/ssd.sh
+  become: yes
+
+- name: MacOS | Generate marker file
+  file: 
+    path: "{{ zsh.dotfile_path }}/.defaults"
+    state: touch
+  creates: "{{ zsh.dotfile_path }}/.defaults"

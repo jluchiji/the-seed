@@ -10,11 +10,12 @@
     PATH: "{{ ansible_env.PATH }}:/usr/local/bin"
 
   roles:
-    - role: elliotweiser.osx-command-line-tools
-    - role: geerlingguy.homebrew
-    - role: git
-    - role: zsh
-    - role: package
-    - role: coreutils
-    - role: nodejs
-    - role: golang
+#    - role: elliotweiser.osx-command-line-tools
+#    - role: geerlingguy.homebrew
+#    - role: git
+#    - role: zsh
+#    - role: package
+#    - role: coreutils
+#    - role: nodejs
+#    - role: golang
+    - role: macos
