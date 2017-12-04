@@ -1,27 +1,59 @@
+
 #
-# Default PATH
+# Default environment variables
 #
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
-
-
-#
-# Export the dotfile root envar
-#
 export DOT_ROOT="{{ zsh.dotfile_path }}"
 
 
 #
-# Source the .localrc if available
+# Aliases
 #
-if [ -f "${HOME}/.localrc" ]; then
-  source "${HOME}/.localrc"
-fi
+alias reload!='. ~/.zshrc'
+alias sudo='sudo ' # Fixes sudo + alias bug
 
 
 #
-# Load all .zshrc files
+# Initialize auto-completion system
+#
+autoload -U compinit
+compinit
+
+# matches case insensitive for lowercase
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+
+# pasting with tabs doesn't perform completion
+zstyle ':completion:*' insert-tab pending
+
+
+# From http://dotfiles.org/~_why/.zshrc
+# Sets the window title nicely no matter where you are
+function title() {
+  # escape '%' chars in $1, make nonprintables visible
+  a=${(V)1//\%/\%\%}
+
+  # Truncate command, and join lines.
+  a=$(print -Pn "%40>...>$a" | tr -d "\n")
+
+  case $TERM in
+  screen)
+    print -Pn "\ek$a:$3\e\\" # screen title (in ^A")
+    ;;
+  xterm*|rxvt)
+    print -Pn "\e]2;$2\a" # plain xterm title ($3 for pwd)
+    ;;
+  esac
+}
+
+
+#
+# Load the rest of ZSH config
 #
 for zshrc in $(find -H "${DOT_ROOT}" -maxdepth 2 -name '*.zshrc'); do
   echo "Loading $zshrc"
   source "$zshrc"
 done
+
+if [ -f "${HOME}/.localrc" ]; then
+  source "${HOME}/.localrc"
+fi

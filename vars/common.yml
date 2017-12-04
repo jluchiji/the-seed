@@ -16,3 +16,7 @@ nodejs:
 
 zsh:
   dotfile_path: $HOME/.zsh
+  antibody_bundles:
+    - zsh-users/zsh-syntax-highlighting
+    - mafredri/zsh-async
+    - sindresorhus/pure

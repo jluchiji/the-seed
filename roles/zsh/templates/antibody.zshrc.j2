@@ -1,0 +1,17 @@
+#
+# Fix the branch non-expansion bug
+#
+setopt prompt_subst
+setopt autocd
+
+#
+# Initialize antibody and load bundles
+#
+source <(antibody init)
+while read bundle; do
+  antibody bundle "${bundle}"
+done <<EOF
+{% for bundle in zsh.antibody_bundles %}
+    {{ bundle }}
+{%endfor%}
+EOF

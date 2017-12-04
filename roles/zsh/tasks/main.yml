@@ -19,3 +19,5 @@
   template: >
     src=templates/zshrc.j2
     dest=~/.zshrc
+
+- include_tasks: antibody.yml

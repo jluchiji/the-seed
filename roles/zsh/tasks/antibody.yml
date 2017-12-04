@@ -1,0 +1,26 @@
+---
+- name: ZSH | Check if antibody is already installed
+  stat: path=/usr/local/bin/antibody
+  register: zsh_antibody_binary
+
+- name: ZSH | Create temp directory
+  tempfile: state=directory
+  register: zsh_antibody_tempdir
+  when: zsh_antibody_binary.stat.exists == False
+
+- name: ZSH | Download antibody installer
+  get_url: >
+    url=https://git.io/antibody
+    dest={{ zsh_antibody_tempdir.path }}/install-antibody
+    mode=755
+  when: zsh_antibody_binary.stat.exists == False
+  
+- name: ZSH | Install antibody
+  shell: "PATH=$PATH:/usr/local/bin {{ zsh_antibody_tempdir.path }}/install-antibody"
+  become: yes
+  when: zsh_antibody_binary.stat.exists == False
+
+- name: ZSH | Copy antibody.zshrc
+  template: >
+    src=templates/antibody.zshrc.j2
+    dest={{ zsh.dotfile_path }}/antibody.zshrc
