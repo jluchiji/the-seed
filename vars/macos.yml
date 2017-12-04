@@ -7,6 +7,28 @@ homebrew_taps:
   - caskroom/fonts
   - homebrew/dupes
 
+homebrew_cask_apps:
+  - 1password
+  - caffeine
+  - daisydisk
+  - dropbox
+  - font-hack
+  - font-input
+  - font-open-sans
+  - font-roboto
+  - font-roboto-slab
+  - google-chrome
+  - gpg-suite
+  - iterm2
+  - keybase
+  - mplayerx
+  - sip
+  - steam
+  - the-unarchiver
+  - tower
+  - visual-studio-code
+  - vlc
+
 homebrew_installed_packages:
   - { name: coreutils, install_options: "with-default-names" }
   - { name: findutils, install_options: "with-default-names" }
@@ -18,6 +40,8 @@ homebrew_installed_packages:
   - direnv
   - gawk
   - git
+  - git-extras
+  - gpg
   - wget
 
 packages: [ ]

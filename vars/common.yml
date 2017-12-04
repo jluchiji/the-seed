@@ -17,9 +17,12 @@ nodejs:
 zsh:
   dotfile_path: $HOME/.zsh
   antibody_bundles:
-    - zsh-users/zsh-syntax-highlighting
+    - chrissicool/zsh-256color
     - mafredri/zsh-async
+    - rupa/z
     - sindresorhus/pure
+    - supercrabtree/k
+    - zsh-users/zsh-syntax-highlighting
 
 golang:
   prefix: /usr/local
