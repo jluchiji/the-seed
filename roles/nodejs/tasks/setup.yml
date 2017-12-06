@@ -13,26 +13,19 @@
   stat: path={{ nodejs.n_install_path }}
   register: nodejs_n_dir
 
-- name: NodeJS | Create temp directory
-  tempfile: state=directory
-  register: nodejs_tmpdir
-  when: nodejs_n_dir.stat.exists == False
-
-- name: NodeJS | Download n installer
-  get_url: >
-    url=http://git.io/n-install
-    dest={{ nodejs_tmpdir.path }}/n-install
-    mode=755
-  when: nodejs_n_dir.stat.exists == False
-
 - name: NodeJS | Install n
-  shell: "N_PREFIX={{ nodejs.n_install_path }} {{ nodejs_tmpdir.path }}/n-install -n -y"
+  shell: "curl -sL https://git.io/n-install | bash -s -- -n -y"
+  environment:
+    N_PREFIX: "{{ nodejs.n_install_path }}"
   args:
+    warn: no
     creates: "{{ nodejs.n_install_path }}"
   when: nodejs_n_dir.stat.exists == False
 
 - name: NodeJS | Install requested NodeJS versions
   command: "{{ nodejs.n_install_path }}/bin/n {{ item }}"
+  environment:
+    N_PREFIX: "{{ nodejs.n_install_path }}"
   with_items:
     - "{{ nodejs.versions }}"
   when: nodejs_n_dir.stat.exists == False

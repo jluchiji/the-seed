@@ -3,20 +3,12 @@
   stat: path=/usr/local/bin/antibody
   register: zsh_antibody_binary
 
-- name: ZSH | Create temp directory
-  tempfile: state=directory
-  register: zsh_antibody_tempdir
-  when: zsh_antibody_binary.stat.exists == False
-
-- name: ZSH | Download antibody installer
-  get_url: >
-    url=https://git.io/antibody
-    dest={{ zsh_antibody_tempdir.path }}/install-antibody
-    mode=755
-  when: zsh_antibody_binary.stat.exists == False
-  
 - name: ZSH | Install antibody
-  shell: "PATH=$PATH:/usr/local/bin {{ zsh_antibody_tempdir.path }}/install-antibody"
+  shell: "curl -sL https://git.io/antibody | bash -s"
+  environment:
+    PATH: "{{ ansible_env.PATH }}:/usr/local/bin"
+  args:
+    warn: no
   become: yes
   when: zsh_antibody_binary.stat.exists == False
 
