@@ -8,3 +8,11 @@
   when: macos_defaults_marker.stat.exists == False or macos.force_defaults == True
 
 - include_tasks: apps.yml
+
+- name: MacOS | Copy utility scripts
+  copy:
+    src: "{{ item }}"
+    dest: "{{ zsh.dotfile_path }}/bin"
+    mode: 0755
+  with_fileglob:
+    - "bin/*"

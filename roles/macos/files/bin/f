@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# Opens finder in the specified directory.
+
+# Check if we have args, otherwise default to cwd
+if [ -z $1 ]; then
+  DIR=$(pwd)
+else
+  DIR=$1
+fi
+
+# Open the finder there
+open -a Finder "$DIR"
