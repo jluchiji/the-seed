@@ -1,0 +1,45 @@
+#
+# Packages to install into debian distributions
+#
+---
+packages:
+
+  #
+  # Default packages installed via OS package manager
+  #
+  default:
+    - build-essential
+    - curl
+    - git
+    - ruby
+    - python-setuptools
+    - zsh
+
+
+  #
+  # antibody bundles
+  #
+  antibody:
+    - chrissicool/zsh-256color
+    - mafredri/zsh-async
+    - rupa/z
+    - sindresorhus/pure
+    - supercrabtree/k
+    - zsh-users/zsh-syntax-highlighting
+
+
+  #
+  # npm packages
+  # Note that this playbook sets up globally installed npm packages to be in NODE_PATH
+  #
+  npm:
+    - nodemon
+    - renamer
+    - typescript
+  
+
+  #
+  # golang packages
+  #
+  golang: 
+    - gopkg.in/urfave/cli.v1

@@ -1,0 +1,6 @@
+#
+# Vars specific to debian hosts
+#
+---
+git:
+  credential_helper: cache
