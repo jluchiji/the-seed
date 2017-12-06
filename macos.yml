@@ -5,9 +5,9 @@
   roles:
     - role: elliotweiser.osx-command-line-tools
     - role: geerlingguy.homebrew
+    - role: package
     - role: git
     - role: zsh
-    - role: package
     - role: coreutils
     - role: nodejs
     - role: golang
