@@ -1,7 +1,9 @@
 ---
 - name: NodeJS | Install global packages
-  shell: "PATH=$PATH:{{ nodejs.n_install_path }}/bin npm install -g {{ item }}"
-  args:
-    creates: "{{ nodejs.npm_prefix }}/lib/node_modules/{{ item }}"
+  npm:
+    name: "{{ item }}"
+    global: yes
+  environment:
+    PATH: "{{ ansible_env.PATH }}:{{ nodejs.n_install_path }}/bin"
   with_items:
     - "{{ packages.npm }}"
