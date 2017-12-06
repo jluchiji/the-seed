@@ -9,7 +9,6 @@ Vagrant.configure("2") do |config|
   #
   config.vm.define "macOS" do |machine|
     machine.vm.box = "jhcook/macos-sierra"
-    machine.vm.network :private_network, ip: '10.0.0.100'
 
     # Disable USB2.0, or otherwise the box runs into problems
     machine.vm.provider "virtualbox" do |vbox|
@@ -23,7 +22,6 @@ Vagrant.configure("2") do |config|
   #
   config.vm.define "ubuntu" do |machine|
     machine.vm.box = "ubuntu/trusty64"
-    machine.vm.network :private_network, ip: '10.0.0.102'
   end
 
   #
@@ -31,7 +29,6 @@ Vagrant.configure("2") do |config|
   #
   config.vm.define "centOS" do |machine|
     machine.vm.box = "centos/7"
-    machine.vm.network :private_network, ip: '10.0.0.103'
   end
 
 end
