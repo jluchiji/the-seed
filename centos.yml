@@ -1,0 +1,11 @@
+---
+- hosts: centOS
+  become: no
+
+  roles:
+    - role: package
+    - role: git
+    - role: zsh
+    - role: coreutils
+    - role: nodejs
+    - role: golang

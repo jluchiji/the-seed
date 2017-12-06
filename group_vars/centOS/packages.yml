@@ -1,0 +1,48 @@
+#
+# Packages to install into centOS distributions
+#
+---
+packages:
+
+  #
+  # Default packages installed via OS package manager
+  #
+  default:
+    - curl
+    - gcc
+    - gcc-c++
+    - git
+    - irb
+    - make
+    - openssl-devel
+    - python-setuptools
+    - ruby
+    - zsh
+
+
+  #
+  # antibody bundles
+  #
+  antibody:
+    - chrissicool/zsh-256color
+    - mafredri/zsh-async
+    - rupa/z
+    - sindresorhus/pure
+    - supercrabtree/k
+    - zsh-users/zsh-syntax-highlighting
+
+
+  #
+  # npm packages
+  # Note that this playbook sets up globally installed npm packages to be in NODE_PATH
+  #
+  npm:
+    - nodemon
+    - renamer
+    - typescript
+  
+
+  #
+  # golang packages
+  #
+  golang: [ ]
