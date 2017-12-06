@@ -8,4 +8,4 @@
     key: "https://github.com/{{ user.github }}.keys"
     user: "{{ ansible_user_id }}"
     state: present
-  when: '"personal" in group_names'
+  when: '"ssh_destination" in group_names'

@@ -1,4 +1,4 @@
 ---
 - import_playbook: macos.yml
-- import_playbook: ubuntu.yml
-- import_playbook: centos.yml
+- import_playbook: debian.yml
+- import_playbook: fedora.yml

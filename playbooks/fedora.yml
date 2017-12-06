@@ -1,5 +1,5 @@
 ---
-- hosts: centOS
+- hosts: fedora
   become: no
 
   roles:
