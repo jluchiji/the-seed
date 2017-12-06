@@ -12,3 +12,4 @@
     - role: nodejs
     - role: golang
     - role: macos
+    - role: ssh

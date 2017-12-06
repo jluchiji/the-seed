@@ -1,0 +1,11 @@
+---
+#
+# Pulls SSH keys from apecified Github account and puts them into authorized_keys
+# file for the current user. Requires the host to be in "personal" group.
+#
+- name: SSH | Pull authorized_keys from Github
+  authorized_key:
+    key: "https://github.com/{{ user.github }}.keys"
+    user: "{{ ansible_user_id }}"
+    state: present
+  when: '"personal" in group_names'

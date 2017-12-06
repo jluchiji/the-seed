@@ -9,3 +9,4 @@
     - role: coreutils
     - role: nodejs
     - role: golang
+    - role: ssh

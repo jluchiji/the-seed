@@ -43,4 +43,3 @@
   file: 
     path: "{{ zsh.dotfile_path }}/.defaults"
     state: touch
-  creates: "{{ zsh.dotfile_path }}/.defaults"
