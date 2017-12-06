@@ -67,7 +67,6 @@ function title() {
 # Load the rest of ZSH config
 #
 for zshrc in $(find -H "${DOT_ROOT}" -maxdepth 2 -name '*.zshrc'); do
-  echo "Loading $zshrc"
   source "$zshrc"
 done
 

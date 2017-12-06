@@ -4,6 +4,11 @@
     path={{ zsh.dotfile_path }}
     state=directory
 
+- name: ZSH | Create .zsh/bin directory
+  file:
+    path: "{{ zsh.dotfile_path }}/bin"
+    state: directory
+
 - name: ZSH | Set default shell for remote user to zsh
   user: >
     name={{ ansible_user_id }}
