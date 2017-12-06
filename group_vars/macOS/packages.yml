@@ -86,4 +86,5 @@ packages:
   #
   # golang packages
   #
-  golang: [ ]
+  golang:
+    - gopkg.in/urfave/cli.v1
