@@ -9,6 +9,10 @@ Vagrant.configure("2") do |config|
   config.vm.define "macOS" do |machine|
     machine.vm.box = "jhcook/macos-sierra"
 
+    # Forward SSH port in a more deterministic manner
+    machine.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
+    machine.vm.network :forwarded_port, guest: 22, host: 22000, auto_correct: true
+
     # Disable USB2.0, or otherwise the box runs into problems
     machine.vm.provider "virtualbox" do |vbox|
       vbox.customize ["modifyvm", :id, "--usb", "on"]
@@ -21,6 +25,21 @@ Vagrant.configure("2") do |config|
   #
   config.vm.define "ubuntu" do |machine|
     machine.vm.box = "ubuntu/trusty64"
+
+    # Forward SSH port in a more deterministic manner
+    machine.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
+    machine.vm.network :forwarded_port, guest: 22, host: 22001, auto_correct: true
+  end
+
+  #
+  # debian VM
+  #
+  config.vm.define "debian" do |machine|
+    machine.vm.box = "debian/jessie64"
+
+    # Forward SSH port in a more deterministic manner
+    machine.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
+    machine.vm.network :forwarded_port, guest: 22, host: 22002, auto_correct: true
   end
 
   #
@@ -28,6 +47,10 @@ Vagrant.configure("2") do |config|
   #
   config.vm.define "centOS" do |machine|
     machine.vm.box = "centos/7"
+
+    # Forward SSH port in a more deterministic manner
+    machine.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
+    machine.vm.network :forwarded_port, guest: 22, host: 22003, auto_correct: true
   end
 
 end
