@@ -8,6 +8,11 @@
  - Add your hosts to `inventory.ini`
  - Run `ansible-playbook playbooks/all.yml`
 
+### macOS Remote Provisioning
+In order to remotely provision a macOS machine, you will need to do the following on that machine:
+ - Allow Remove Login (Settings > Sharing)
+ - Use `--ask-sudo-pass` argument when running `ansible-playbook`
+
 ## Testing
  - Install [Ansible](https://www.ansible.com/)
  - Install [Vagrant](https://www.vagrantup.com/)

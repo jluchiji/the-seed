@@ -122,7 +122,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 #
 # Disable automatic emoji substitution (i.e. use plain text smileys)
 #
-# defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
+defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
 
 
 #
@@ -221,3 +221,15 @@ defaults write org.m0k.transmission WarningLegal -bool false
 #
 defaults write org.m0k.transmission BlocklistURL -string "http://john.bitsurge.net/public/biglist.p2p.gz"
 defaults write org.m0k.transmission BlocklistAutoUpdate -bool true
+
+
+#
+# Scroll Reverser (https://github.com/pilotmoon/Scroll-Reverser)
+# Set it up to automatically reverse scroll direction when a mouse is used
+# 
+defaults write com.pilotmoon.scroll-reverser HasRunBefore -bool true
+defaults write com.pilotmoon.scroll-reverser InvertScrollingOn -bool true
+defaults write com.pilotmoon.scroll-reverser ReverseMouse -bool true
+defaults write com.pilotmoon.scroll-reverser ReverseTablet -bool false
+defaults write com.pilotmoon.scroll-reverser ReverseTrackpad -bool false
+defaults write com.pilotmoon.scroll-reverser SUEnableAutomaticChecks -bool true

@@ -32,11 +32,11 @@ packages:
       - font-roboto-slab
       - flux
       - google-chrome
-      - gpg-suite
       - iterm2
       - keybase
       - mplayerx
       - sip
+      - scroll-reverser
       - steam
       - the-unarchiver
       - tower

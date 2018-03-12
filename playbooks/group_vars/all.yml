@@ -5,7 +5,7 @@
 user:
   name: Denis Luchkin-Zhou
   email: wyvernzora@gmail.com
-  github: jluchiji
+  github: wyvernzora
 
 nodejs:
   n_install_path: "{{ ansible_env.HOME }}/.n"
