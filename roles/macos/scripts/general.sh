@@ -211,3 +211,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # rm -rf ~/Library/Application Support/Dock/desktoppicture.db
 # sudo rm -rf /System/Library/CoreServices/DefaultDesktop.jpg
 # sudo ln -s /path/to/your/image /System/Library/CoreServices/DefaultDesktop.jpg
+
+
+#
+# Completely disable the Guest user
+#
+# sudo dscl . delete /Users/Guest
