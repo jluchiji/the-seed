@@ -15,13 +15,11 @@ packages:
   #
   homebrew:
     taps:
-      - caskroom/cask
-      - caskroom/fonts
-      - homebrew/dupes
       - kryptco/tap
     
     casks:
       - 1password
+      - bartender
       - caffeine
       - daisydisk
       - dropbox
@@ -32,6 +30,7 @@ packages:
       - font-roboto-slab
       - flux
       - google-chrome
+      - hazel
       - iterm2
       - keybase
       - mplayerx
@@ -88,3 +87,5 @@ packages:
   #
   golang:
     - gopkg.in/urfave/cli.v1
+    - gopkg.in/aws/aws-sdk-go.v1
+
