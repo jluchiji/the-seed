@@ -2,3 +2,6 @@
 
 *.log
 *.retry
+roles/elliotweiser.osx-command-line-tools
+roles/geerlingguy.homebrew
+roles/geerlingguy.docker
