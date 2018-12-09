@@ -11,5 +11,6 @@
     - role: coreutils
     - role: nodejs
     - role: golang
+    - role: python
     - role: macos
     - role: ssh

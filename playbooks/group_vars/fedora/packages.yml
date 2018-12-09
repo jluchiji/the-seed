@@ -12,7 +12,7 @@ packages:
     - gcc
     - gcc-c++
     - git
-    - irb
+    #- irb
     - make
     - openssl-devel
     - python-setuptools
@@ -46,3 +46,11 @@ packages:
   # golang packages
   #
   golang: [ ]
+
+
+  #
+  # pip packages
+  #
+  pip:
+    - boto3
+    - botocore

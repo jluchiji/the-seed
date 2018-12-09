@@ -43,3 +43,11 @@ packages:
   #
   golang: 
     - gopkg.in/urfave/cli.v1
+
+
+  #
+  # pip packages
+  #
+  pip:
+    - boto3
+    - botocore

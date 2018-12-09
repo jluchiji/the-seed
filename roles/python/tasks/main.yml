@@ -1,0 +1,19 @@
+---
+
+#
+# Install pip
+#
+- name: Python | Install pip
+  become: yes
+  easy_install:
+    name: pip
+    state: latest
+
+#
+# Install pip packages
+#
+- name: Python | Install pip packages
+  become: yes
+  pip:
+    name: "{{ item }}"
+  with_items: "{{ packages.pip }}"

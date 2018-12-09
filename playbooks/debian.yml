@@ -11,4 +11,5 @@
       become: yes
     - role: nodejs
     - role: golang
+    - role: python
     - role: ssh
