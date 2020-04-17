@@ -4,7 +4,7 @@
   register: zsh_antibody_binary
 
 - name: ZSH | Install antibody
-  shell: "curl -sL https://git.io/antibody | bash -s"
+  shell: "curl -sfL git.io/antibody | sh -s - -b /usr/local/bin"
   environment:
     PATH: "{{ ansible_env.PATH }}:/usr/local/bin"
   args:
